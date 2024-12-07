@@ -86,10 +86,20 @@ local function copyTime()
     end
 end
 
+local function copyFrame()
+    local frame_number = mp.get_property_number("estimated-frame-number")
+    local frame_string = string.format("%d", frame_number)
+    if set_clipboard(frame_string) then
+        mp.osd_message(string.format("Copied to Clipboard: %s", frame_string))
+    else
+        mp.osd_message("Failed to copy time to clipboard")
+    end
+end
 
 platform = platform_type()
 if platform == UNIX then
     clipboard_cmd = get_clipboard_cmd()
 end
 
-mp.add_key_binding("Ctrl+c", "copyTime", copyTime)
+mp.add_key_binding(nil, "copyTime", copyTime)
+mp.add_key_binding(nil, "copyFrame", copyFrame)
