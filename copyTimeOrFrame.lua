@@ -92,7 +92,7 @@ local function copyFrame()
     if set_clipboard(frame_string) then
         mp.osd_message(string.format("Copied to Clipboard: %s", frame_string))
     else
-        mp.osd_message("Failed to copy time to clipboard")
+        mp.osd_message("Failed to copy frame to clipboard")
     end
 end
 
