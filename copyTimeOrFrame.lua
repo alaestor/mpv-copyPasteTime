@@ -28,5 +28,23 @@ local function copyFrame()
     setClipboard(frame_string)
 end
 
+local function _pasteTime_impl(text)
+    -- this is a callback intended to recieve text from mpv-clipboard's "get-clipboard"
+    timestamp = text:match("%d?%d?:?%d?%d?:?%d?%d%.?%d*")
+    if timestamp ~= nil then
+        mp.osd_message("Timestamp pasted: " .. timestamp)
+        mp.commandv("osd-bar", "seek", timestamp, "absolute")
+    end -- best effort; silent failure
+end
+
+local function pasteTime()
+    if not mp.commandv("script-message", "get-clipboard", "_pasteTime_impl") then
+        mp.osd_message("Failed to read clipboard.\nAre you missing `mpv-clipboard`?")
+    end
+end
+
+mp.register_script_message("_pasteTime_impl", _pasteTime_impl)
+
 mp.add_key_binding(nil, "copyFrame", copyFrame)
 mp.add_key_binding(nil, "copyTime", copyTime)
+mp.add_key_binding(nil, "pasteTime", pasteTime)
