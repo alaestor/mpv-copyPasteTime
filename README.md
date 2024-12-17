@@ -1,4 +1,4 @@
-# mpv-copyTimeOrFrame
+# mpv-copyPasteTime
 
 A fork of [mpv-copyTime](https://github.com/Arieleg/mpv-copyTime) with a few bugfixes from unmerged PRs and a couple new features.
 
@@ -23,7 +23,7 @@ Windows users may prefer [dyphire's fork](https://github.com/dyphire/mpv-clipboa
 
 ## 2. Install the script
 
-Put `copyTimeOrFrame.lua` in your scripts folder, usually in:
+Put `copyPasteTime.lua` in your scripts folder, usually in:
 *  Windows: `"%APPDATA%\mpv\scripts"`.
 *  Linux and Mac: `"~/.config/mpv/scripts/"`.
 
@@ -44,9 +44,9 @@ or
 
 2. Add your preferred keybinds to your `inputs.conf` file. e.g.
 ```
-ctrl+c script-message-to copyTimeOrFrame copyTime
-shift+c script-message-to copyTimeOrFrame copyFrame
-shift+v script-message-to copyTimeOrFrame pasteTime
+ctrl+c script-message-to copyPasteTime copyTime
+shift+c script-message-to copyPasteTime copyFrame
+shift+v script-message-to copyPasteTime pasteTime
 ```
 
 Note: these example keybinds may conflict with your existing keybinds or [MPV's defaults](https://github.com/mpv-player/mpv/blob/master/etc/input.conf).
