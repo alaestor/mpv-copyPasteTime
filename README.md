@@ -46,7 +46,7 @@ or
 ```
 shift+c script-message-to copyPasteTime copyFrame
 ctrl+c script-message-to copyPasteTime copyTime
-shift+v script-message-to copyPasteTime pasteTime
+ctrl+v script-message-to copyPasteTime pasteTime
 ```
 
 Note: these example keybinds may conflict with your existing keybinds or [MPV's defaults](https://github.com/mpv-player/mpv/blob/master/etc/input.conf).
