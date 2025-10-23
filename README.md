@@ -35,8 +35,8 @@ Either...
 
 1. Modify the lines at the bottom of the script by changing `nil` to your desired keybinds. e.g.
 ```
-mp.add_key_binding("ctrl+c", "copyFrame", copyFrame)
-mp.add_key_binding("shift+c", "copyTime", copyTime)
+mp.add_key_binding("shift+c", "copyFrame", copyFrame)
+mp.add_key_binding("ctrl+c", "copyTime", copyTime)
 mp.add_key_binding("ctrl+v", "pasteTime", pasteTime)
 ```
 
@@ -44,8 +44,8 @@ or
 
 2. Add your preferred keybinds to your `inputs.conf` file. e.g.
 ```
-ctrl+c script-message-to copyPasteTime copyTime
 shift+c script-message-to copyPasteTime copyFrame
+ctrl+c script-message-to copyPasteTime copyTime
 shift+v script-message-to copyPasteTime pasteTime
 ```
 
